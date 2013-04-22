@@ -81,10 +81,20 @@ class tx_simplefilebrowser_pi1 extends tslib_pibase {
 				$path = $this->checkAndCleanPath($getPath,$origPath);
 			}
 			$path = !(empty($path)) ? $path : $origPath;
-	
+	              
+                        // read root dir via typoscript
+                        $rootPath = $this->conf['rootDirectory'];
+
+                        if (!empty($getDownloadPath)) {
+                            if($rootPath){
+                                $downloadPath = $this->checkAndCleanPathForDownload($getDownloadPath,$origPath,$rootPath);
+                            }else{
+                                $downloadPath = $this->checkAndCleanPath($path,$origPath);
+                            }
+                        }
 			// is there any directory info?
 			if (!empty($getFile)) {
-				$filearray = t3lib_div::getAllFilesAndFoldersInPath(array(),$path);
+				$filearray = t3lib_div::getAllFilesAndFoldersInPath(array(),$downloadPath);
 				$pathToFile = $filearray[$getFile];
 				$filename = $this->getFileName($pathToFile);
 				$mimetype = $this->getMimeType($filename);
@@ -96,7 +106,7 @@ class tx_simplefilebrowser_pi1 extends tslib_pibase {
 				readfile($pathToFile);
 				die();
 			}
-				
+                        
 			// get directory content
 			$dir = $this->getDir($path);
 				
@@ -293,7 +303,32 @@ class tx_simplefilebrowser_pi1 extends tslib_pibase {
 			return false;
 		}
 	}
-	
+        /**
+         * Cleans up the path and checks, if new path ist within given original path (for security reasons)
+         *
+         * @param	string		$path: contains current path
+         * @param	string		$origPath: contains original path (set by TypoScript)
+         * @return	the cleaned path (or FALSE otherwise)
+         */
+        function checkAndCleanPathForDownload($path,$origPath,$rootPath) {
+
+            $path = str_replace("..","",$path);
+            $path = str_replace(".","",$path);
+            $path = str_replace("%2E","",$path);
+            $path = str_replace("'","",$path);
+            $path = str_replace('"',"",$path);
+            $path = str_replace("\\","",$path);
+
+            if (strpos($path,$rootPath) === 0) {
+                if (strpos($path,$origPath) === 0) {
+                    return $origPath;
+                } else {
+                    return $path;
+                }
+            } else {
+                return false;
+            }
+        }
 	/**
 	 * Build of array containing subdirectories and files of given path
 	 *
