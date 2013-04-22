@@ -13,11 +13,3 @@ Patricks extension is simple and brilliant, it does what it is supposed to. But 
 2. the path is always added as a parameter to the links
 3. the security-check is slightly adjusted: Is file in root-folder?
 
-
-### Usage
-
-You have to set the root of the directory via Typoscript: 
-
-plugin.tx_simplefilebrowser_pi1.rootDirectory = /path/to/typo3-installation/fileadmin/root-folder/
-
-Now you can use several plugins on one page, which point to another folder (within rootDirectory).
