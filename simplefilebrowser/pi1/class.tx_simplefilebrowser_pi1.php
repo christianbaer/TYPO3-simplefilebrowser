@@ -247,7 +247,6 @@ class tx_simplefilebrowser_pi1 extends tslib_pibase {
 					$markers['###JOIN###'] = '<img src="'.t3lib_extMgm::siteRelPath('simplefilebrowser').'res/join.gif" border="0" class="dpIcon">';
 				}
 				//echo $key;
-				$link = '<a href="'.$this->pi_linkTP_keepPIvars_url(array(file=>$key)).'">';
 				$link .= '<img src="'.t3lib_extMgm::siteRelPath('simplefilebrowser').'res/icon_'.$ext.'.gif" border="0" class="dpIcon">&nbsp;'.$elem;
 				$link .= '</a>';
 				$markers['###LINK###'] = $link;
