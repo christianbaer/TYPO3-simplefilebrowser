@@ -82,6 +82,8 @@ class tx_simplefilebrowser_pi1 extends tslib_pibase {
 			}
 			$path = !(empty($path)) ? $path : $origPath;
 	              
+                        $getDownloadPath = t3lib_div::_GET('tx_simplefilebrowser_pi1');
+                        $getDownloadPath = $getDownloadPath['path'];
                         // read root dir via typoscript
                         $rootPath = $this->conf['rootDirectory'];
 
