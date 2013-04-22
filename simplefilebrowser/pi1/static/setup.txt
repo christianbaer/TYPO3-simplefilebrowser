@@ -1,0 +1,7 @@
+plugin.tx_simplefilebrowser_pi1 {
+   // directory = /path/to/directory
+}
+
+page.includeCSS {
+	tx_simplefilebrowser_pi1 = {$plugin.tx_simplefilebrowser_pi1.cssFile}
+}

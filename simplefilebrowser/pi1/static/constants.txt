@@ -1,0 +1,4 @@
+plugin.tx_simplefilebrowser_pi1 {
+	# cat=plugin.tx_simplefilebrowser_pi1//; type=string; label=Path to CSS file: location of the CSS file (leave empty to include no CSS file)
+	cssFile = EXT:simplefilebrowser/pi1/simplefilebrowser_pi1.css
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for extension 'simplefilebrowser'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="pi1_title">Simple File Browser</label>
+			<label index="pi1_plus_wiz_description">Inserts a simple file browser</label>
+			<label index="label.pathToDirectory">Choose directory</label>
+			<label index="label.path">Absolut path to directory. Needs admin rights! Has precedence!</label>
+			<label index="label.showdate">Show modification date after filename?</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="pi1_title">Einfacher Datei-Browser</label>
+			<label index="pi1_plus_wiz_description">Fügt einen Datei-Browser ein</label>
+			<label index="label.pathToDirectory">Verzeichnis wählen</label>
+			<label index="label.path">Absoluter Pfad zum Verzeichnis. Nur als Admin! Hat Vorrang!</label>
+			<label index="label.showdate">Zeige Datum der letzten Änderung nach Dateinamen?</label>
+		</languageKey>
+	</data>
+</T3locallang>

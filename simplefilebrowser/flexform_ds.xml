@@ -1,0 +1,32 @@
+<T3DataStructure>
+	<ROOT>
+		<type>array</type>
+		<el>
+			<directoryFromTree>
+  				<TCEforms>
+   					<label>LLL:EXT:simplefilebrowser/locallang.xml:label.pathToDirectory</label>
+   					<config>
+    					<type>select</type>
+     						<itemsProcFunc>tx_simplefilebrowser_addFieldsToFlexForm->addFields</itemsProcFunc>
+   					</config>
+   				</TCEforms>
+			</directoryFromTree>
+			<directory>
+				<TCEforms>
+					<label>LLL:EXT:simplefilebrowser/locallang.xml:label.path</label>
+					<config>
+						<type>input</type>
+					</config>
+				</TCEforms>
+			</directory>
+			<showdate>
+				<TCEforms>
+					<label>LLL:EXT:simplefilebrowser/locallang.xml:label.showdate</label>
+					<config>
+						<type>check</type>
+					</config>
+				</TCEforms>
+			</showdate>
+		</el>
+	</ROOT>
+</T3DataStructure>
