@@ -13,3 +13,9 @@ Patricks extension is simple and brilliant, it does what it is supposed to. But 
 2. the path is always added as a parameter to the links
 3. the security-check is slightly adjusted: Is file in root-folder?
 
+### Usage
+
+Make sure that you have the rootDirectory defined in Typoscript:
+plugin.tx_simplefilebrowser_pi1.rootDirectory = /path/to/typo3-installation/fileadmin/webdok/
+
+Now you can add several Plugins on one page, each pionting to another directory (in the tree of rootDir).
